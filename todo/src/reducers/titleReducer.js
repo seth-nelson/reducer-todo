@@ -1,8 +1,18 @@
 const tasks = [
     {
-        item: 'Learn about reducers',
+        item: 'wash car',
         completed: false,
-        id: 3892987589
+        id: 9061
+    },
+    {
+        item: 'change oil',
+        completed: false,
+        id: 9062
+    },
+    {
+        item: 'vacuum carpet',
+        completed: false,
+        id: 9063
     }
 ];
 
