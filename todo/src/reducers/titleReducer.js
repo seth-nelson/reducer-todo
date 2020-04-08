@@ -1,4 +1,4 @@
-const tasks = [
+export const initialState = [
     {
         item: 'wash car',
         completed: false,
@@ -17,23 +17,32 @@ const tasks = [
 ];
 
 
-export const initialState = {
-    title: 'title from reducer',
-    editing: false
-};
-
 export const titleReducer = (state, action) => {
-    if (action.type === "TOGGLE_EDITING") {
-        return {
-            ...state,
-            editing: !state.editing
-        };
-    } else if (action.type === "UPDATE_TITLE") {
-        return {
-            ...state,
-            title: action.payload,
-            editing: false
-        };
+    switch (action.type) {
+        case "ADD_TASK":
+            return {
+                ...state,
+                completed: false,
+                id: (Math.random() * Math.random()).toString(9).substr(2, 9)
+            };
+        case "TOGGLE_COMPLETE_TASK":
+            return {
+                ...state,
+                state.map(task => {
+                    if (task.id === action.payload) {
+                        return {...task, complete: !task.complete};
+                    }
+                return task;
+                })
+            };
+        case "CLEAR_COMPELTE_TASK":
+            return {
+                ...state,
+                state.filter(task => {
+                    return !task.complete;
+                })
+            };
+        default:
+            return state;
     }
-    return state;
-}
+};
