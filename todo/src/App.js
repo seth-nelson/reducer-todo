@@ -1,5 +1,4 @@
 import React from 'react';
-import TodoForm from './components/TodoForm.js';
 import TodoList from './components/TodoList.js';
 import './App.css';
 
@@ -10,9 +9,8 @@ function App() {
     <div className="App">
       <div className='header'>
         <h1>Car Maintenence Tasks</h1>
-        <TodoForm />
       </div>
-      <div className='car-tasklist'>
+      <div className='tasklist-container'>
         <TodoList />
       </div>
     </div>

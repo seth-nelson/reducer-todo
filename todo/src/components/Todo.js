@@ -1,11 +1,18 @@
 import React from 'react';
 
 
-const Todo = (props) => {
+const Todo = ({dispatch, task}) => {
+
+    const toggleComplete = () => {
+        dispatch({
+            type: 'TOGGLE_COMPLETE_TASK',
+            payload: task.id
+        })
+    }
 
     return (
-        <div className='todo-container'>
-            <h3>{props.task.item}</h3>
+        <div className='todo-container' onClick={toggleComplete}>
+            <h3>{task.item}</h3>
         </div>
     )
 }

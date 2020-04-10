@@ -1,18 +1,16 @@
-import React, { useState, useReducer } from 'react';
-import { reducer, initialState } from '../reducers/titleReducer.js';
+import React, { useState } from 'react';
 
-const TodoForm = () => {
+const TodoForm = ({ dispatch }) => {
 
-    const [task, setTask] = useState('');
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [item, setItem] = useState('');
 
     const submitForm = e => {
         e.preventDefault();
         dispatch({
             type: 'ADD_TASK',
-            payload: task,
+            payload: item,
         });
-        setTask('');
+        setItem('');
     };
   
     const clearCompleteTasks = e => {
@@ -23,7 +21,7 @@ const TodoForm = () => {
     };
   
     const handleChanges = e => {
-        setTask(e.target.value);
+        setItem(e.target.value);
     };
 
     return (
@@ -32,9 +30,11 @@ const TodoForm = () => {
                 <div className='add-task-container'>
                     <input 
                         name='add-task'
+                        type='text'
+                        value={item}
                         onChange={handleChanges} 
                     />
-                    <button className='add-btn'>Add Task</button>
+                    <button className='add-btn' onClick={submitForm}>Add Task</button>
                     <button className='clr-completed-btn' onClick={clearCompleteTasks}>Clear Completed Tasks</button>
                 </div>
             </form>

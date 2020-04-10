@@ -20,23 +20,23 @@ export const initialState = [
 export const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_TASK":
-            return {
+            return [
                 ...state,
-                item: action.payload,
-                completed: false,
-                id: (Math.random() * Math.random()).toString(9).substr(2, 9)
-            };
+                    { 
+                        item: action.payload,
+                        completed: false,
+                        id: Date.now()
+                    }
+            ];
         case "TOGGLE_COMPLETE_TASK":
             return state.map(task => {
                     if (task.id === action.payload) {
-                        return {...task, complete: !task.complete};
-                    }
+                        return {...task, completed: !task.completed};
+                    } else {
                 return task;
-                });
-        case "CLEAR_COMPELTE_TASK":
-            return state.filter(task => {
-                    return !task.complete;
-                });
+            }});
+        case "CLEAR_COMPLETE_TASK":
+            return state.filter(task => !task.completed);
         default:
             return state;
     }
