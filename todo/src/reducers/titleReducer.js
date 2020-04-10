@@ -17,7 +17,7 @@ export const initialState = [
 ];
 
 
-export const titleReducer = (state, action) => {
+export const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_TASK":
             return {
