@@ -12,7 +12,7 @@ const Todo = ({dispatch, task}) => {
 
     return (
         <div className='todo-container' onClick={toggleComplete}>
-            <h3>{task.item}</h3>
+            <h3>{task.item} <span>{task.timeCompleted}</span></h3>
         </div>
     )
 }

@@ -1,19 +1,21 @@
 import React from 'react';
 import TodoList from './components/TodoList.js';
 import './App.css';
-
+import { StyledAppContainer, TasklistContainer, StyledHeader } from './components/Styles';
 
 function App() {
 
   return (
-    <div className="App">
-      <div className='header'>
-        <h1>Car Maintenence Tasks</h1>
-      </div>
-      <div className='tasklist-container'>
+    <StyledAppContainer className="app-container">
+      <StyledHeader className='header'>
+        <h1>Auto Tasks</h1>
+        <img src='main-logo.jpg' alt='spinning wrenches'>
+        </img>
+      </StyledHeader>
+      <TasklistContainer className='tasklist-container'>
         <TodoList />
-      </div>
-    </div>
+      </TasklistContainer>
+    </StyledAppContainer>
   );
 }
 

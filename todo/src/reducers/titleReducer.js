@@ -1,21 +1,25 @@
+var moment = require('moment');
+
 export const initialState = [
     {
-        item: 'wash car',
+        item: 'Wash Car',
         completed: false,
-        id: 9061
+        id: 9061,
+        timeCompleted: ''
     },
-    {
-        item: 'change oil',
-        completed: false,
-        id: 9062
-    },
-    {
-        item: 'vacuum carpet',
-        completed: false,
-        id: 9063
-    }
+    // {
+    //     item: 'Change Oil',
+    //     completed: false,
+    //     id: 9062,
+    //     timeCompleted: ''
+    // },
+    // {
+    //     item: 'Vacuum Carpet',
+    //     completed: false,
+    //     id: 9063,
+    //     timeCompleted: ''
+    // }
 ];
-
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -25,13 +29,14 @@ export const reducer = (state, action) => {
                     { 
                         item: action.payload,
                         completed: false,
-                        id: Date.now()
+                        id: Date.now(),
+                        timeCompleted: ''
                     }
             ];
         case "TOGGLE_COMPLETE_TASK":
             return state.map(task => {
                     if (task.id === action.payload) {
-                        return {...task, completed: !task.completed};
+                        return {...task, completed: !task.completed, timeCompleted: moment().format('MMMM Do YYYY, h:mm a')};
                     } else {
                 return task;
             }});

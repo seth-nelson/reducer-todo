@@ -31,6 +31,7 @@ const TodoForm = ({ dispatch }) => {
                     <input 
                         name='add-task'
                         type='text'
+                        placeholder='Enter Task'
                         value={item}
                         onChange={handleChanges} 
                     />
