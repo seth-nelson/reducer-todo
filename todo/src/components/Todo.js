@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyledDate, TaskContainer } from './Styles';
 
 
 const Todo = ({dispatch, task}) => {
@@ -11,9 +12,9 @@ const Todo = ({dispatch, task}) => {
     }
 
     return (
-        <div className='todo-container' onClick={toggleComplete}>
-            <h3>{task.item} <span>{task.timeCompleted}</span></h3>
-        </div>
+        <TaskContainer className='hvr-underline-from-left' onClick={toggleComplete}>
+            <h3>{task.item} <StyledDate>{task.timeCompleted}</StyledDate></h3>
+        </TaskContainer>
     )
 }
 

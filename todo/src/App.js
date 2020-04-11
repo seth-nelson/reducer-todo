@@ -9,8 +9,6 @@ function App() {
     <StyledAppContainer className="app-container">
       <StyledHeader className='header'>
         <h1>Auto Tasks</h1>
-        <img src='main-logo.jpg' alt='spinning wrenches'>
-        </img>
       </StyledHeader>
       <TasklistContainer className='tasklist-container'>
         <TodoList />

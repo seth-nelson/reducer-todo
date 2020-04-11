@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AddTaskBtn, ClearTaskBtn, InputTaskField } from './Styles';
 
 const TodoForm = ({ dispatch }) => {
 
@@ -27,16 +28,16 @@ const TodoForm = ({ dispatch }) => {
     return (
         <div>
             <form onSubmit={submitForm}>
-                <div className='add-task-container'>
-                    <input 
+                <div className='task-modification-container'>
+                    <InputTaskField 
                         name='add-task'
                         type='text'
                         placeholder='Enter Task'
                         value={item}
                         onChange={handleChanges} 
                     />
-                    <button className='add-btn' onClick={submitForm}>Add Task</button>
-                    <button className='clr-completed-btn' onClick={clearCompleteTasks}>Clear Completed Tasks</button>
+                    <AddTaskBtn className='hvr-grow' onClick={submitForm}>Add Task</AddTaskBtn>
+                    <ClearTaskBtn className='hvr-grow' onClick={clearCompleteTasks}>Clear Completed Tasks</ClearTaskBtn>
                 </div>
             </form>
         </div>
