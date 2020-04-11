@@ -1,10 +1,6 @@
-.task {
+/* .task {
   background-color: blue;
-}
-
-.task.completed {
-  background-color: #2bb1ff;
-}
+} */
 
 
 .hvr-grow {
@@ -51,4 +47,13 @@
 }
 .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
   right: 0;
+}
+
+.hvr-underline-from-left.completed {
+  background-color: maroon;
+  text-decoration-line: line-through;
+}
+
+.span.complete {
+  display: none;
 }

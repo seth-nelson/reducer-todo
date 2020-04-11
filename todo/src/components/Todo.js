@@ -12,7 +12,7 @@ const Todo = ({dispatch, task}) => {
     }
 
     return (
-        <TaskContainer className='hvr-underline-from-left' onClick={toggleComplete}>
+        <TaskContainer className={`hvr-underline-from-left ${task.completed ? 'completed' : ''} `} onClick={toggleComplete}>
             <h3>{task.item} <StyledDate>{task.timeCompleted}</StyledDate></h3>
         </TaskContainer>
     )

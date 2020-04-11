@@ -13,12 +13,14 @@ export const StyledHeader = styled.div`
     padding: 10px;
 `;
 
-export const TasklistContainer = styled.div`
-    /* background-color: black;
-    color: #830b0b; */
+export const MainBody = styled.div`
     width: 40%;
     margin: 0 auto;
     align-content: center;
+`;
+
+export const TasksContainer = styled.div`
+    padding-top: 80px;
 `;
 
 export const StyledDate = styled.span`
@@ -30,7 +32,7 @@ export const InputTaskField = styled.input`
     width: 180px;
     height: 40px;
     margin: 10px;
-    color: limegreen;
+    color: goldenrod;
     border-bottom: 2px solid #13889c;
     border-top: none;
     border-left: none;
